@@ -3,35 +3,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
+    <!--Adaugare iconite noi-->
+
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_categorie_sanatate"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:title="@string/categorie_sanatate" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_categorie_dezvoltare_personala"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:title="@string/categorie_dezvoltare_personala" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_categorie_actiune"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:title="@string/categorie_actiune" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_categorie_afaceri"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="@string/categorie_afaceri" />
     </group>
 
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_categorie_preferate"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:title="@string/categorie_preferate" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_categorie_contact"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="@string/categorie_contact" />
         </menu>
     </item>
 

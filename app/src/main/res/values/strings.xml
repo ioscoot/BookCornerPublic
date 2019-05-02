@@ -6,4 +6,10 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="categorie_actiune">Actiune</string>
+    <string name="categorie_sanatate">Sanatate</string>
+    <string name="categorie_afaceri">Afaceri</string>
+    <string name="categorie_dezvoltare_personala">Dezvoltare Personala</string>
+    <string name="categorie_preferate">Preferate</string>
+    <string name="categorie_contact">Contact</string>
 </resources>
