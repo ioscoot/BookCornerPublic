@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "625631600974",
+    "firebase_url": "https://bookcorner-58254.firebaseio.com",
+    "project_id": "bookcorner-58254",
+    "storage_bucket": "bookcorner-58254.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625631600974:android:1e0487b6db258fd9",
+        "android_client_info": {
+          "package_name": "com.example.rober.bookcorner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "625631600974-9al28g94ie90rri5enmn3fcg3tidhdv9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT8lFhCWGxmM_ep1NyoiJtktLHmNSBTuM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "625631600974-9al28g94ie90rri5enmn3fcg3tidhdv9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
