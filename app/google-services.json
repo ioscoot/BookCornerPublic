@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "625631600974-gfp00de0g79fdj3l7b6hbfugp3cd8qc3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rober.bookcorner",
+            "certificate_hash": "18ec59e64ab252025a3eca147c44217afe8574af"
+          }
+        },
+        {
           "client_id": "625631600974-9al28g94ie90rri5enmn3fcg3tidhdv9.apps.googleusercontent.com",
           "client_type": 3
         }
