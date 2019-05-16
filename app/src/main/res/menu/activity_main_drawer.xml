@@ -27,9 +27,9 @@
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_categorie_preferate"
+                android:id="@+id/nav_categorie_locatii"
                 android:icon="@drawable/ic_menu_share"
-                android:title="@string/categorie_preferate" />
+                android:title="@string/categorie_locatii" />
             <item
                 android:id="@+id/nav_categorie_contact"
                 android:icon="@drawable/ic_menu_send"

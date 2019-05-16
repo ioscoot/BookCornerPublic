@@ -10,7 +10,8 @@
     <string name="categorie_sanatate">Sanatate</string>
     <string name="categorie_afaceri">Afaceri</string>
     <string name="categorie_dezvoltare_personala">Dezvoltare Personala</string>
-    <string name="categorie_preferate">Preferate</string>
+    <string name="categorie_locatii">Locatii Magazine</string>
     <string name="categorie_contact">Contact</string>
     <string name="title_activity_display_book">DisplayBookActivity</string>
+    <string name="title_activity_locatii">Map</string>
 </resources>

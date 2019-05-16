@@ -29,7 +29,6 @@ public class DisplayBookActivity extends AppCompatActivity {
     private Carte carte;
     private int cantitateAdaugata = 1;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

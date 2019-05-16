@@ -165,8 +165,9 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(getBaseContext(), MainActivity.class);
             intent.putExtra("NUME_CATEGORIE", "afaceri");
             startActivity(intent);
-        } else if (id == R.id.nav_categorie_preferate) {
-
+        } else if (id == R.id.nav_categorie_locatii) {
+            Intent intent = new Intent(getBaseContext(), LocatiiActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
