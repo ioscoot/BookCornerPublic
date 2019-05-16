@@ -10,34 +10,34 @@ import android.widget.TextView;
 
 import com.example.rober.bookcorner.R;
 
-import java.util.List;
+import java.util.ArrayList;
 
-public class BookList extends ArrayAdapter<Carte> {
-
+public class CosCumparaturiListAdapter extends ArrayAdapter<Carte> {
     private Activity context;
-    private List<Carte> bookList;
+    private ArrayList<Carte> bookList;
 
-    public BookList(Activity context, List<Carte> bookList) {
-        super(context, R.layout.list_layout, bookList);
+
+    public CosCumparaturiListAdapter(Activity context, ArrayList<Carte> bookList) {
+        super(context, R.layout.list_cos_cumparaturi_layout, bookList);
+
         this.context = context;
         this.bookList = bookList;
     }
-
 
     @NonNull
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
 
-        View listViewItem = inflater.inflate(R.layout.list_layout, null, true);
+        View listViewItem = inflater.inflate(R.layout.list_cos_cumparaturi_layout, null, true);
 
-        TextView textViewAutor = (TextView) listViewItem.findViewById(R.id.textViewAutor);
-        TextView textViewTitlu = (TextView) listViewItem.findViewById(R.id.textViewTitlu);
+        TextView textViewTitlu = (TextView) listViewItem.findViewById(R.id.textView_item_list_cos_titlu);
+        TextView textViewCantitate = (TextView) listViewItem.findViewById(R.id.textView_item_list_cos_cantitate);
 
         Carte carte = bookList.get(position);
 
-        textViewAutor.setText(carte.getAutor());
         textViewTitlu.setText(carte.getTitlu());
+        textViewCantitate.setText(String.valueOf(carte.getCantitate()));
 
         return listViewItem;
 

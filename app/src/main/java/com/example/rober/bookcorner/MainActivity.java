@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.example.rober.bookcorner.classes.BookList;
 import com.example.rober.bookcorner.classes.Carte;
+import com.example.rober.bookcorner.classes.CosCumparaturiListAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -54,8 +55,8 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(getBaseContext(), CosCumparaturiActivity.class);
+                startActivity(intent);
             }
         });
 

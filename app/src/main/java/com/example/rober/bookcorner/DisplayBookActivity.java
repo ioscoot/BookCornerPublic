@@ -1,5 +1,6 @@
 package com.example.rober.bookcorner;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -54,8 +55,8 @@ public class DisplayBookActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(getBaseContext(), CosCumparaturiActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -76,7 +77,8 @@ public class DisplayBookActivity extends AppCompatActivity {
         button_display_book_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //todo: Adaugare in map-ul din activitatea cosului de cumparaturi
+                carte.setCantitate(Integer.parseInt(textView_display_book_cantitate_adaugata.getText().toString()));
+                CosCumparaturiActivity.listaCartiCosCumparaturi.add(carte);
             }
         });
     }
