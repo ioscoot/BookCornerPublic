@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rober.bookcorner.classes.BookList;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity
     DatabaseReference myRef;
     ListView listViewBooks;
     List<Carte> bookList = new ArrayList<>();
+    TextView textView_main_numar_produse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        this.textView_main_numar_produse = findViewById(R.id.textView_main_numar_produse);
 
         myRef = database.getReference("afaceri");
         listViewBooks = findViewById(R.id.listViewBooks);
@@ -74,6 +78,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onStart() {
         super.onStart();
+        this.textView_main_numar_produse.setText(String.valueOf(CosCumparaturiActivity.listaCartiCosCumparaturi.size()));
         String categorie = getIntent().getStringExtra("NUME_CATEGORIE");
 
         if (Objects.nonNull(categorie)) {
@@ -94,11 +99,9 @@ public class MainActivity extends AppCompatActivity
                     listViewBooks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            // TODO: 5/9/2019 Creare intent catre activitatea de afisare a unei carti + pasarea cartii catre activitate
                             Intent intent = new Intent(MainActivity.this, DisplayBookActivity.class);
                             intent.putExtra("Carte", bookList.get(position));
                             startActivity(intent);
-                            //Toast.makeText(MainActivity.this, bookList.get(position).getTitlu(), Toast.LENGTH_LONG).show();
                         }
                     });
                 }

@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import com.example.rober.bookcorner.classes.Carte;
 
+import java.util.Objects;
+
 public class DisplayBookActivity extends AppCompatActivity {
 
     TextView textView_display_book_autor;
@@ -23,6 +25,7 @@ public class DisplayBookActivity extends AppCompatActivity {
     TextView textView_display_book_descriere;
     TextView textView_display_book_cantitate_adaugata;
     TextView textView_display_book_cantitate;
+    TextView textView_display_book_numar_produse;
 
     Button button_display_book_minus;
     Button button_display_book_plus;
@@ -44,6 +47,8 @@ public class DisplayBookActivity extends AppCompatActivity {
         this.textView_display_book_cantitate_adaugata = findViewById(R.id.textView_display_book_cantitate_adaugata);
         this.textView_display_book_cantitate_adaugata.setText(String.valueOf(cantitateAdaugata));
         this.textView_display_book_cantitate = findViewById(R.id.textView_display_book_cantitate);
+        this.textView_display_book_numar_produse = findViewById(R.id.textView_display_book_numar_produse);
+        this.updateContorNumarProduse();
 
         populareInterfata();
 
@@ -79,22 +84,38 @@ public class DisplayBookActivity extends AppCompatActivity {
             public void onClick(View v) {
                 carte.setCantitate(Integer.parseInt(textView_display_book_cantitate_adaugata.getText().toString()));
                 CosCumparaturiActivity.listaCartiCosCumparaturi.add(carte);
+                updateContorNumarProduse();
             }
         });
     }
 
     private void populareInterfata() {
-        this.carte = getCarteFromIntent();
-        this.textView_display_book_autor.setText(carte.getAutor());
-        this.textView_display_book_titlu.setText(carte.getTitlu());
-        this.textView_display_book_aprecieri.setText(String.valueOf(carte.getNrAprecieri()));
-        this.textView_display_book_descriere.setText(carte.getDescriere());
-        this.textView_display_book_cantitate.setText(String.valueOf(carte.getCantitate()));
+        getCarteFromIntent();
+        if (this.carte != null) {
+            this.textView_display_book_autor.setText(carte.getAutor());
+            this.textView_display_book_titlu.setText(carte.getTitlu());
+            this.textView_display_book_aprecieri.setText(String.valueOf(carte.getNrAprecieri()));
+            this.textView_display_book_descriere.setText(carte.getDescriere());
+            this.textView_display_book_cantitate.setText(String.valueOf(carte.getCantitate()));
+        } else {
+            if (BookCornerWidget.randomBook != null) {
+                this.carte = BookCornerWidget.randomBook;
+                this.textView_display_book_autor.setText(carte.getAutor());
+                this.textView_display_book_titlu.setText(carte.getTitlu());
+                this.textView_display_book_aprecieri.setText(String.valueOf(carte.getNrAprecieri()));
+                this.textView_display_book_descriere.setText(carte.getDescriere());
+                this.textView_display_book_cantitate.setText(String.valueOf(carte.getCantitate()));
+            }
+        }
+
     }
 
-    private Carte getCarteFromIntent() {
-        Carte carte = (Carte) getIntent().getSerializableExtra("Carte");
-        return carte;
+    private void updateContorNumarProduse() {
+        this.textView_display_book_numar_produse.setText(String.valueOf(CosCumparaturiActivity.listaCartiCosCumparaturi.size()));
+    }
+
+    private void getCarteFromIntent() {
+        this.carte = (Carte) getIntent().getSerializableExtra("Carte");
     }
 
     private void scadeCantitate() {
